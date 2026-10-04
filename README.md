@@ -1,5 +1,7 @@
 # Movie Gross Showdown
 
+**Play: [movie-gross-game.onrender.com](https://movie-gross-game.onrender.com)**
+
 A browser game: two movies, pick the one that earned more at the worldwide
 box office. The pairs are deliberately close, so it's a judgement call rather
 than an obvious one.
