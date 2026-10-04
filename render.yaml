@@ -1,0 +1,7 @@
+# Render Blueprint - https://render.com/docs/blueprint-spec
+# Plain static files, so there is no build step: Render just serves the repo root.
+services:
+  - type: web
+    name: movie-gross-game
+    runtime: static
+    staticPublishPath: .

@@ -1,0 +1,4 @@
+# Cached TMDB search pages from tools/refresh_movies.py (regenerable, ~23MB)
+tools/.cache/
+
+.DS_Store

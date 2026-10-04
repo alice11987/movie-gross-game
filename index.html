@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Gross Showdown</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="shell">
+
+  <!-- ===== Start ===== -->
+  <section id="screen-start" class="screen">
+    <p class="eyebrow">Box office trivia</p>
+    <h1 class="title">Movie Gross<span>Showdown</span></h1>
+    <p class="blurb">
+      Two movies. Pick the one that earned more at the worldwide box office.
+      They start far apart and get closer every round &mdash; by match 32
+      they're within a few percent of each other.
+    </p>
+    <p class="warn">One wrong answer ends your run.</p>
+    <button id="btn-play" class="btn-primary" type="button">Start a run</button>
+    <p class="best-line">Best streak: <strong id="start-best">0</strong> / 32</p>
+  </section>
+
+  <!-- ===== Match ===== -->
+  <section id="screen-game" class="screen" hidden>
+
+    <header class="hud">
+      <div class="hud-cell">
+        <span class="hud-label">Match</span>
+        <span class="hud-value"><span id="hud-match">1</span> / 32</span>
+      </div>
+      <div class="hud-bar"><div id="hud-fill" class="hud-fill"></div></div>
+      <div class="hud-cell hud-right">
+        <span class="hud-label">Streak</span>
+        <span class="hud-value" id="hud-streak">0</span>
+      </div>
+    </header>
+
+    <h2 class="prompt">Which one earned more worldwide?</h2>
+
+    <div class="arena">
+      <button class="card" id="card-0" type="button">
+        <span class="poster-wrap">
+          <img class="poster" id="poster-0" alt="" src="">
+          <span class="poster-fallback" id="fallback-0"></span>
+        </span>
+        <span class="card-body">
+          <span class="card-title" id="title-0"></span>
+          <span class="card-year" id="year-0"></span>
+          <span class="card-gross" id="gross-0"></span>
+        </span>
+      </button>
+
+      <div class="versus" aria-hidden="true">vs</div>
+
+      <button class="card" id="card-1" type="button">
+        <span class="poster-wrap">
+          <img class="poster" id="poster-1" alt="" src="">
+          <span class="poster-fallback" id="fallback-1"></span>
+        </span>
+        <span class="card-body">
+          <span class="card-title" id="title-1"></span>
+          <span class="card-year" id="year-1"></span>
+          <span class="card-gross" id="gross-1"></span>
+        </span>
+      </button>
+    </div>
+
+    <div class="verdict" id="verdict" role="status" aria-live="polite"></div>
+    <button id="btn-next" class="btn-primary btn-next" type="button" hidden>Next match</button>
+    <p class="hint">Click a poster, or use the &larr; and &rarr; keys.</p>
+  </section>
+
+  <!-- ===== Game over ===== -->
+  <section id="screen-over" class="screen" hidden>
+    <p class="eyebrow" id="over-eyebrow">Run over</p>
+    <h2 class="over-head" id="over-head">Wrong call</h2>
+    <p class="over-streak"><strong id="over-streak">0</strong><span>matches survived</span></p>
+    <p class="over-detail" id="over-detail"></p>
+    <p class="best-line" id="over-best"></p>
+    <button id="btn-again" class="btn-primary" type="button">Play again</button>
+  </section>
+
+</main>
+
+<footer class="credits">
+  Worldwide lifetime grosses from Box Office Mojo, as of <span id="as-of"></span>.
+  Poster art courtesy of <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>.
+  This product uses the TMDB API but is not endorsed or certified by TMDB.
+</footer>
+
+<script src="movies.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
